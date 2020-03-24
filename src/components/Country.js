@@ -291,7 +291,7 @@ const countryOptions = [
   { value: "Solomon Islands", text: "Solomon Islands", key: "sb", flag: "sb" },
   { value: "Somalia", text: "Somalia", key: "so", flag: "so" },
   { value: "South Africa", text: "South Africa", key: "za", flag: "za" },
-  { value: "South Korea", text: "South Korea", key: "kr", flag: "kr" },
+  { value: "S. Korea", text: "S. Korea", key: "kr", flag: "kr" },
   { value: "Spain", text: "Spain", key: "es", flag: "es" },
   { value: "Sri Lanka", text: "Sri Lanka", key: "lk", flag: "lk" },
   { value: "Sudan", text: "Sudan", key: "sd", flag: "sd" },
@@ -314,8 +314,8 @@ const countryOptions = [
   { value: "Turkmenistan", text: "Turkmenistan", key: "tm", flag: "tm" },
   { value: "Tuvalu", text: "Tuvalu", key: "tv", flag: "tv" },
   {
-    value: "U.A.E",
-    text: "U.A.E.",
+    value: "UAE",
+    text: "UAE",
     key: "ae",
     flag: "ae",
     alias: "United Arab Emirates"
@@ -323,15 +323,15 @@ const countryOptions = [
   { value: "Uganda", text: "Uganda", key: "ug", flag: "ug" },
   { value: "Ukraine", text: "Ukraine", key: "ua", flag: "ua" },
   {
-    value: "United Kingdom",
-    text: "United Kingdom",
+    value: "UK",
+    text: "UK",
     key: "uk",
     flag: "gb",
     alias: "uk"
   },
   {
-    value: "United States",
-    text: "United States",
+    value: "USA",
+    text: "USA",
     key: "us",
     flag: "us",
     alias: "America"
@@ -369,9 +369,9 @@ const countryOptions = [
 
 class Country extends React.Component {
   onChangeFollower = (event, data) => {
-    this.props.onSelect(data.value);
+    this.props.onSelect(data);
   };
-  componentDidMount() {}
+
   render() {
     let reducedCountry = [];
     if (this.props.bible) {
@@ -379,7 +379,6 @@ class Country extends React.Component {
         return this.props.bible[country.text];
       });
     }
-    console.log(this.props.initialCountry);
     if (this.props.initialCountry) {
       return (
         <Dropdown
@@ -393,7 +392,7 @@ class Country extends React.Component {
         />
       );
     } else {
-      return <div style={{ height: "51.13px" }}></div>;
+      return <div style={{ height: "61.56px" }}></div>;
     }
   }
 }

@@ -1,7 +1,7 @@
 .wrapper {
   background-color: #003152;
   color: #c7c7c7;
-  height: 100vh;
+  min-height: 100vh;
 }
 .content,
 .titleContent,
@@ -24,10 +24,17 @@ i {
   place-content: center;
   justify-content: center;
   align-items: center;
-  height: 14vh;
+  height: 122px;
   background: #002640;
   box-shadow: 0px 0px 5px #171717 inset;
-  margin-bottom: 4vh;
+  margin-bottom: 3vh;
+  padding-top: 10px;
+}
+.ui.button:hover,
+.ui.active.button:active,
+.ui.button:focus {
+  background-color: #141b27 !important;
+  color: white !important;
 }
 .block {
   width: 200px;
@@ -36,7 +43,7 @@ i {
   align-items: center;
   justify-content: center;
   padding: 0px 0px;
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
   box-shadow: 1px 1px 2px #1b1b1b;
   background-color: #002f4e;
   border-radius: 10px;
@@ -57,17 +64,17 @@ i {
   justify-content: center;
   height: 44px;
   font-size: 30px;
+  text-shadow: 1px 1px 1px black;
 }
 .lastUpdated {
   display: flex;
-  position: fixed;
-  bottom: 10vh;
-  left: 50%;
-  margin-left: -100px;
   font-size: 10px;
   opacity: 0.6;
   width: 200px;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  margin: 20px auto;
 }
 @media (max-width: 330px) {
   .titleContent {
@@ -75,13 +82,31 @@ i {
   }
 }
 .dropDownWrap {
-  width: 70% !important;
-  margin-bottom: 4vh;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.dropDownWrap button.button {
+  display: flex !important;
+  place-content: center;
+  padding: 13px 40px !important;
+  background: #132138;
+  color: #d4d4d4;
+  font-size: 16px !important;
+  text-transform: capitalize;
+  box-shadow: 1px 1px 1px black !important;
+}
+.dropDownWrap i {
+  position: absolute;
+  left: 20px;
 }
 .dropDownWrap .dropdown,
 .dropDownWrap .dropdown .menu {
   background: #002138 !important;
-  border-color: #131313 !important;
+  border-color: transparent !important;
+  border-radius: 10px !important;
 }
 
 .dropDownWrap .dropdown .menu {
@@ -91,6 +116,10 @@ i {
 .dropDownWrap .dropdown i {
   background-color: transparent !important;
 }
+.dropdown {
+  height: 62px;
+  font-size: 22px !important;
+}
 
 .dropDownWrap .dropdown .text {
   color: #c7c7c7 !important;
@@ -98,4 +127,47 @@ i {
 
 .ui.selection.dropdown .menu > .item {
   border-top: 1px solid #131313 !important;
+}
+
+.additionalInfo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.additionalInfo .block {
+  width: 30%;
+  margin: 0 8px;
+}
+.additionalInfo .key,
+.additionalInfo .value {
+  font-size: 14px;
+  height: 30px;
+}
+.dropdown input {
+  height: 100%;
+}
+.ui.search.dropdown > input.search {
+  color: white !important;
+  opacity: 1 !important;
+}
+.blurElem {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+.countrySlector {
+  position: absolute;
+  top: -20vh;
+  width: 80vw;
+  left: 10vw;
+  transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.countrySlectorInview {
+  top: 20vh !important;
+}
+.dropdown .menu {
+  height: 45vh !important;
+  max-height: 60vh !important;
+}
+.dropdown .item {
 }

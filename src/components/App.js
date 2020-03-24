@@ -6,12 +6,22 @@ import "./App.css";
 import Country from "./Country";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.dropdownRef = React.createRef();
+  }
+
   state = {
-    country: "",
-    lastUpdate: "",
+    country: "--",
+    flagIcon: "--",
+    lastUpdate: "--",
     confirmed: "--",
     deaths: "--",
-    recovered: "--"
+    recovered: "--",
+    newDeath: "--",
+    newCase: "--",
+    activeCase: "--",
+    countrySelectorOpen: false
   };
 
   static bible = {};
@@ -23,7 +33,7 @@ class App extends React.Component {
       ipData.get(),
       covid.get(`?country=${this.state.country}`)
     ]);
-
+    this.setState({ flagIcon: countryData.data.country_code.toLowerCase() });
     this.bible = {
       ..._.mapKeys(covidData.data.countries_stat, "country_name")
     };
@@ -40,15 +50,35 @@ class App extends React.Component {
       lastUpdate: this.updateDate,
       confirmed: this.bible[country].cases,
       deaths: this.bible[country].deaths,
-      recovered: this.bible[country].total_recovered
+      recovered: this.bible[country].total_recovered,
+      newDeath: this.bible[country].new_deaths,
+      newCase: this.bible[country].new_cases,
+      activeCase: this.bible[country].active_cases
     });
   };
 
   setCountry = country => {
-    console.log("Country Name: ", country);
-    if (this.bible[country]) {
-      this.refreshState(country);
+    console.log(country);
+    if (country && this.bible[country.value]) {
+      this.refreshState(country.value);
+      country.options.find(value => {
+        if (value.value === country.value) {
+          this.setState({ flagIcon: value.flag });
+        }
+        return false;
+      });
     }
+    this.setState({ countrySelectorOpen: false });
+  };
+
+  setCountrySelector = () => {
+    this.setState({ countrySelectorOpen: true });
+    console.log("hhhh");
+    console.log(this.dropdownRef.current);
+  };
+
+  unsetCountrySelector = e => {
+    this.setState({ countrySelectorOpen: false });
   };
 
   renderStats() {
@@ -58,16 +88,20 @@ class App extends React.Component {
           <h2 className="ui header">
             <i className="medkit icon large white"></i>
             <div className="content titleContent">COVID-19 STATISTICS</div>
+            <div className="dropDownWrap">
+              <div className="ui icon labeled vertical buttons">
+                <button className="ui button" onClick={this.setCountrySelector}>
+                  <i
+                    aria-hidden="true"
+                    className={this.state.flagIcon + " flag"}
+                  ></i>
+                  {this.state.country}
+                </button>
+              </div>
+            </div>
           </h2>
         </div>
         <div className="content">
-          <div className="dropDownWrap">
-            <Country
-              onSelect={this.setCountry}
-              bible={this.bible}
-              initialCountry={this.initialCountry}
-            />
-          </div>
           <div className="block">
             <div className="key">Confirmed cases</div>
             <div className="value">{this.state.confirmed}</div>
@@ -80,6 +114,20 @@ class App extends React.Component {
             <div className="key">Recovered</div>
             <div className="value">{this.state.recovered}</div>
           </div>
+          <div className="additionalInfo">
+            <div className="block">
+              <div className="key">New cases</div>
+              <div className="value">{this.state.newCase}</div>
+            </div>
+            <div className="block">
+              <div className="key">New deaths</div>
+              <div className="value">{this.state.newDeath}</div>
+            </div>
+            <div className="block">
+              <div className="key">Active cases</div>
+              <div className="value">{this.state.activeCase}</div>
+            </div>
+          </div>
         </div>
         <div className="lastUpdated">{`Last updated at ${this.state.lastUpdate}`}</div>
       </div>
@@ -87,7 +135,28 @@ class App extends React.Component {
   }
 
   render() {
-    return <div>{this.renderStats()}</div>;
+    return (
+      <div>
+        <div className={this.state.countrySelectorOpen ? "blurElem" : ""}>
+          {this.renderStats()}
+        </div>
+        <div
+          className={
+            this.state.countrySelectorOpen
+              ? "countrySlectorInview countrySlector"
+              : "countrySlector"
+          }
+          onBlur={this.unsetCountrySelector}
+        >
+          <Country
+            onSelect={this.setCountry}
+            bible={this.bible}
+            initialCountry={this.initialCountry}
+            ref={this.dropdownRef}
+          />
+        </div>
+      </div>
+    );
   }
 }
 
