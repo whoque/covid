@@ -12,21 +12,27 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    covid.get(`/stats?country=${this.state.country}`).then(response => {
+    //${this.state.country}
+    covid.get("?country=India").then(response => {
+      console.log(
+        response.data.stat_by_country[response.data.stat_by_country.length - 1]
+      );
       const {
-        country,
-        lastUpdate,
-        confirmed,
-        deaths,
-        recovered
-      } = response.data.data.covid19Stats[0];
-      const date = new Date(lastUpdate);
+        country_name,
+        record_date,
+        total_cases,
+        total_deaths,
+        total_recovered
+      } = response.data.stat_by_country[
+        response.data.stat_by_country.length - 1
+      ];
+      const date = new Date(record_date);
       this.setState({
-        country,
+        country: country_name,
         lastUpdate: date,
-        confirmed,
-        deaths,
-        recovered
+        confirmed: total_cases,
+        deaths: total_deaths,
+        recovered: total_recovered
       });
     });
   }
