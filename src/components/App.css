@@ -27,7 +27,7 @@ i {
   height: 14vh;
   background: #002640;
   box-shadow: 0px 0px 5px #171717 inset;
-  margin-bottom: 12vh;
+  margin-bottom: 4vh;
 }
 .block {
   width: 200px;
@@ -73,4 +73,29 @@ i {
   .titleContent {
     font-size: 18px;
   }
+}
+.dropDownWrap {
+  width: 70% !important;
+  margin-bottom: 4vh;
+}
+.dropDownWrap .dropdown,
+.dropDownWrap .dropdown .menu {
+  background: #002138 !important;
+  border-color: #131313 !important;
+}
+
+.dropDownWrap .dropdown .menu {
+  background: #142938 !important;
+}
+
+.dropDownWrap .dropdown i {
+  background-color: transparent !important;
+}
+
+.dropDownWrap .dropdown .text {
+  color: #c7c7c7 !important;
+}
+
+.ui.selection.dropdown .menu > .item {
+  border-top: 1px solid #131313 !important;
 }
