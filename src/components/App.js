@@ -73,13 +73,13 @@ class App extends React.Component {
 
   setCountrySelector = () => {
     this.setState({ countrySelectorOpen: true });
-    console.log("hhhh");
-    console.log(this.dropdownRef.current);
   };
 
-  unsetCountrySelector = e => {
-    this.setState({ countrySelectorOpen: false });
-  };
+  // unsetCountrySelector = e => {
+  //   setTimeout(() => {
+  //     this.setState({ countrySelectorOpen: false });
+  //   });
+  // };
 
   renderStats() {
     return (
@@ -88,20 +88,20 @@ class App extends React.Component {
           <h2 className="ui header">
             <i className="medkit icon large white"></i>
             <div className="content titleContent">COVID-19 STATISTICS</div>
-            <div className="dropDownWrap">
-              <div className="ui icon labeled vertical buttons">
-                <button className="ui button" onClick={this.setCountrySelector}>
-                  <i
-                    aria-hidden="true"
-                    className={this.state.flagIcon + " flag"}
-                  ></i>
-                  {this.state.country}
-                </button>
-              </div>
-            </div>
           </h2>
         </div>
-        <div className="content">
+        <div className="content mainContent">
+          <div className="dropDownWrap">
+            <div className="ui icon labeled vertical buttons">
+              <button className="ui button" onClick={this.setCountrySelector}>
+                <i
+                  aria-hidden="true"
+                  className={this.state.flagIcon + " flag"}
+                ></i>
+                {this.state.country}
+              </button>
+            </div>
+          </div>
           <div className="block">
             <div className="key">Confirmed cases</div>
             <div className="value">{this.state.confirmed}</div>
@@ -128,35 +128,36 @@ class App extends React.Component {
               <div className="value">{this.state.activeCase}</div>
             </div>
           </div>
+          <div className="lastUpdated">{`Last updated at ${this.state.lastUpdate}`}</div>
         </div>
-        <div className="lastUpdated">{`Last updated at ${this.state.lastUpdate}`}</div>
       </div>
     );
   }
 
   render() {
-    return (
-      <div>
-        <div className={this.state.countrySelectorOpen ? "blurElem" : ""}>
-          {this.renderStats()}
-        </div>
-        <div
-          className={
-            this.state.countrySelectorOpen
-              ? "countrySlectorInview countrySlector"
-              : "countrySlector"
-          }
-          onBlur={this.unsetCountrySelector}
-        >
-          <Country
-            onSelect={this.setCountry}
-            bible={this.bible}
-            initialCountry={this.initialCountry}
-            ref={this.dropdownRef}
-          />
-        </div>
-      </div>
-    );
+    return <div></div>;
+    // return (
+    //   <div>
+    //     <div className={this.state.countrySelectorOpen ? "blurElem" : ""}>
+    //       {this.renderStats()}
+    //     </div>
+    //     <div
+    //       className={
+    //         this.state.countrySelectorOpen
+    //           ? "countrySlectorInview countrySlector"
+    //           : "countrySlector"
+    //       }
+    //     >
+    //       <Country
+    //         onSelect={this.setCountry}
+    //         bible={this.bible}
+    //         initialCountry={this.initialCountry}
+    //         ref={this.dropdownRef}
+    //         // onBlur={this.unsetCountrySelector}
+    //       />
+    //     </div>
+    //   </div>
+    // );
   }
 }
 

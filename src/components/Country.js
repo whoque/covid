@@ -369,6 +369,7 @@ const countryOptions = [
 
 class Country extends React.Component {
   onChangeFollower = (event, data) => {
+    console.log(data);
     this.props.onSelect(data);
   };
 

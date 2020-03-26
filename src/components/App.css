@@ -1,7 +1,10 @@
 .wrapper {
-  background-color: #003152;
   color: #c7c7c7;
-  min-height: 100vh;
+  min-height: 111vh;
+}
+.content.mainContent {
+  height: 100vh;
+  background-color: #003152;
 }
 .content,
 .titleContent,
@@ -10,7 +13,6 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: 20px;
 }
 i {
@@ -21,20 +23,24 @@ i {
 }
 .wrapper .title {
   display: flex;
+  flex-direction: column;
   place-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 122px;
-  background: #002640;
+  height: 118px;
+  background: #2a2e31;
   box-shadow: 0px 0px 5px #171717 inset;
-  margin-bottom: 3vh;
-  padding-top: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: -2;
+  padding-top: 28px;
 }
 .ui.button:hover,
 .ui.active.button:active,
 .ui.button:focus {
-  background-color: #141b27 !important;
-  color: white !important;
+  background-color: #003152 !important;
+  color: black !important;
 }
 .block {
   width: 200px;
@@ -43,9 +49,9 @@ i {
   align-items: center;
   justify-content: center;
   padding: 0px 0px;
-  margin-bottom: 3vh;
+  margin-bottom: 4vh;
   box-shadow: 1px 1px 2px #1b1b1b;
-  background-color: #002f4e;
+  background-color: #2a2e31;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -53,9 +59,10 @@ i {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: #002742;
+  background: #a99675;
   height: 40px;
   align-items: center;
+  color: black;
 }
 .block .value {
   display: flex;
@@ -82,21 +89,23 @@ i {
   }
 }
 .dropDownWrap {
-  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-items: center;
+  position: relative;
+  top: -40px;
 }
 .dropDownWrap button.button {
   display: flex !important;
   place-content: center;
-  padding: 13px 40px !important;
-  background: #132138;
-  color: #d4d4d4;
+  padding-bottom: 28px !important;
+  background: #003152;
+  color: #a99675;
   font-size: 16px !important;
   text-transform: capitalize;
-  box-shadow: 1px 1px 1px black !important;
+  border-radius: 16px !important;
+  box-shadow: 0px -8px 3px rgb(24, 24, 24) !important;
 }
 .dropDownWrap i {
   position: absolute;
@@ -168,6 +177,4 @@ i {
 .dropdown .menu {
   height: 45vh !important;
   max-height: 60vh !important;
-}
-.dropdown .item {
 }
