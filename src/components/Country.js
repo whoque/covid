@@ -1,5 +1,4 @@
 import React from "react";
-import { Dropdown } from "semantic-ui-react";
 
 const countryOptions = [
   { value: "Afghanistan", text: "Afghanistan", key: "af", flag: "af" },
@@ -368,9 +367,14 @@ const countryOptions = [
 ];
 
 class Country extends React.Component {
-  onChangeFollower = (event, data) => {
-    console.log(data);
-    this.props.onSelect(data);
+  renderOptions = reducedCountry => {
+    return reducedCountry.map(country => {
+      return (
+        <option key={country.key} value={`${country.text}_${country.flag}`}>
+          {country.text}
+        </option>
+      );
+    });
   };
 
   render() {
@@ -380,20 +384,14 @@ class Country extends React.Component {
         return this.props.bible[country.text];
       });
     }
-    if (this.props.initialCountry) {
+    if (this.props.country && reducedCountry.length) {
       return (
-        <Dropdown
-          placeholder="Select Country"
-          fluid
-          search
-          selection
-          options={reducedCountry}
-          onChange={this.onChangeFollower}
-          defaultValue={this.props.initialCountry}
-        />
+        <select className="drop-down" defaultValue={this.props.country}>
+          {this.renderOptions(reducedCountry)}
+        </select>
       );
     } else {
-      return <div style={{ height: "61.56px" }}></div>;
+      return <div></div>;
     }
   }
 }
