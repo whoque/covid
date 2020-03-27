@@ -59,21 +59,50 @@ class Slider extends React.Component {
     });
   };
 
+  handleDarkMode = e => {
+    let element = document.getElementById("section1");
+    element.classList.toggle("dark-mode-background");
+    element.classList.toggle("white-mode-background");
+  };
+
   paintScrollers = () => {
     return (
       <div id="fullpage">
-        <div className="section" id="section1">
-          <div className="slide" id="slide1">
-            <div className="content">
+        <div className="section white-mode-background" id="section1">
+          <div className="slide active" id="slide1">
+            <div
+              className={`content ${
+                this.props.isPortrait ? `portrait` : `not-portrait`
+              }`}
+            >
               <WorldView stats={this.state} />
             </div>
           </div>
-          <div className="slide" id="slide2">
-            <div className="content">
+          <div className="slide inactive" id="slide2">
+            <div
+              className={`content ${
+                this.props.isPortrait ? `portrait` : `not-portrait`
+              }`}
+            >
               {this.state.country !== "--" ? (
                 <CountryView stats={this.state} />
               ) : null}
             </div>
+          </div>
+          <div className="dark-mode default-color-off">
+            <label className="label">
+              <div className="toggle">
+                <input
+                  className="toggle-state"
+                  type="checkbox"
+                  name="check"
+                  value="check"
+                  onChange={this.handleDarkMode}
+                />
+                <div className="indicator"></div>
+              </div>
+              <div className="label-text"></div>
+            </label>
           </div>
         </div>
       </div>

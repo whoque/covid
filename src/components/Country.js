@@ -391,7 +391,7 @@ class Country extends React.Component {
     if (this.props.country && reducedCountry.length) {
       return (
         <select
-          className="drop-down"
+          className="drop-down default-color-off"
           defaultValue={this.props.country}
           onChange={this.handleChangeCountry}
         >

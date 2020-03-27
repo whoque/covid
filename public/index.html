@@ -81,9 +81,17 @@
         if (xDiff > 0) {
           /* left swipe */
           elem.scrollTo(window.screen.width, 0);
+          elem.querySelector("#slide2").classList.add("active");
+          elem.querySelector("#slide2").classList.remove("inactive");
+          elem.querySelector("#slide1").classList.remove("active");
+          elem.querySelector("#slide1").classList.add("inactive");
         } else {
           /* right swipe */
           elem.scrollTo(-window.screen.width, 0);
+          elem.querySelector("#slide2").classList.remove("active");
+          elem.querySelector("#slide2").classList.add("inactive");
+          elem.querySelector("#slide1").classList.add("active");
+          elem.querySelector("#slide1").classList.remove("inactive");
         }
       } else {
         if (yDiff > 0) {

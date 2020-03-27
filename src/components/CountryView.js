@@ -48,7 +48,7 @@ class CountryView extends React.Component {
             <div className="stat-value">{this.stats.recovered}</div>
           </div>
         </div>
-        <div className="swipe">&larr;</div>
+        {/* <div className="swipe">&larr;</div> */}
       </div>
     );
   };

@@ -19,7 +19,7 @@ class WorldView extends React.Component {
             <div className="stat-value">{this.props.stats.recovered}</div>
           </div>
         </div>
-        <div className="swipe">&rarr;</div>
+        {/* <div className="swipe">&rarr;</div> */}
       </div>
     );
   };

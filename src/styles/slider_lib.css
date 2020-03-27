@@ -29,7 +29,6 @@ p {
 /* Section 2
  * --------------------------------------- */
 #section1 {
-  background-color: #eeeeee;
   display: flex;
   flex-direction: row;
 }
