@@ -7,34 +7,6 @@
     width: 100vw;
     min-width: 100vw;
     min-height: 100vh;
-    .not-portrait {
-      height: 72vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .wrapper {
-        .title {
-          .drop-down {
-            width: 75%;
-          }
-        }
-        .stats {
-          display: flex;
-          flex-direction: row;
-          margin-top: 5vh;
-          .block {
-            width: 30vw;
-            margin: 0 1.5vw;
-            .stat-title {
-              height: 48px;
-            }
-            .stat-value {
-              font-size: 7vw;
-            }
-          }
-        }
-      }
-    }
     .wrapper {
       display: flex;
       justify-content: center;
@@ -54,7 +26,8 @@
         /* text-shadow: 2px 2px 1px #3133638a; */
         border-radius: 50px;
         margin-bottom: 5vh;
-        transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: 0.6s;
+        transition-timing-function: ease-in-out;
         background: linear-gradient(
           45deg,
           #405de67d,
@@ -80,6 +53,8 @@
       .stats {
         color: #a0a0a0;
         .block {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
           border-radius: 36px;
           margin-bottom: 4vh;
           padding: 12px 12px 23px;
@@ -98,25 +73,37 @@
         }
         .block.block1 {
           .stat-title {
+            transition: 0.6s;
+            transition-timing-function: ease-in-out;
             color: #405de67d;
           }
           .stat-value {
+            transition: 0.6s;
+            transition-timing-function: ease-in-out;
             color: #5851db8c;
           }
         }
         .block.block2 {
           .stat-title {
+            transition: 0.6s;
+            transition-timing-function: ease-in-out;
             color: #833ab485;
           }
           .stat-value {
+            transition: 0.6s;
+            transition-timing-function: ease-in-out;
             color: #c135848a;
           }
         }
         .block.block3 {
           .stat-title {
+            transition: 0.6s;
+            transition-timing-function: ease-in-out;
             color: #e1306c85;
           }
           .stat-value {
+            transition: 0.6s;
+            transition-timing-function: ease-in-out;
             color: #fd1d1d63;
           }
         }
@@ -127,7 +114,8 @@
     .wrapper {
       .title {
         width: 125%;
-        transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: 0.6s;
+        transition-timing-function: ease-in-out;
         opacity: 0.3;
       }
     }
@@ -145,6 +133,8 @@
     }
     .stats {
       .block {
+        transition: 0.6s;
+        transition-timing-function: ease-in-out;
         .stat-title {
           font-size: 22px;
           height: 60px;
@@ -152,6 +142,36 @@
         .stat-value {
           font-size: 109px;
           height: 44px;
+        }
+      }
+    }
+  }
+  .content {
+    height: 72vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+      .title {
+        .drop-down {
+          width: 75%;
+        }
+      }
+      .stats {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5vh;
+        .block {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
+          width: 30vw !important;
+          margin: 0 1.5vw;
+          .stat-title {
+            height: 48px;
+          }
+          .stat-value {
+            font-size: 7vw !important;
+          }
         }
       }
     }
@@ -194,7 +214,8 @@
     width: 200%;
     border-radius: 15px;
     transform: translate3d(-75%, 0, 0);
-    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
   }
 
   .toggle-state:checked ~ .indicator {
@@ -204,15 +225,21 @@
 
 .white-mode-background {
   .slide {
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
     background-color: #eeeeee;
     .stats {
       .block {
+        transition: 0.6s;
+        transition-timing-function: ease-in-out;
         background: linear-gradient(145deg, #d6d6d6, #ffffff);
         box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
       }
     }
     .wrapper {
       .title {
+        transition: 0.6s;
+        transition-timing-function: ease-in-out;
         background: #eeeeee;
         box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
       }
@@ -220,10 +247,14 @@
   }
   .dark-mode {
     .toggle {
+      transition: 0.6s;
+      transition-timing-function: ease-in-out;
       box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6,
         4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
     }
     .indicator {
+      transition: 0.6s;
+      transition-timing-function: ease-in-out;
       background: #ecf0f3;
       box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
     }
@@ -232,39 +263,57 @@
 
 .dark-mode-background {
   .slide {
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
     background-color: #242424;
     .stats {
       .block {
+        transition: 0.6s;
+        transition-timing-function: ease-in-out;
         background: linear-gradient(145deg, #212121, #202020);
         box-shadow: 8px 8px 16px #1f1f1f, -8px -8px 16px #0e0e0e;
       }
       .block.block1 {
         .stat-title {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
           color: #405de6d6;
         }
         .stat-value {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
           color: #5851dbd6;
         }
       }
       .block.block2 {
         .stat-title {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
           color: #833ab4d6;
         }
         .stat-value {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
           color: #c13584d6;
         }
       }
       .block.block3 {
         .stat-title {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
           color: #e1306cd6;
         }
         .stat-value {
+          transition: 0.6s;
+          transition-timing-function: ease-in-out;
           color: #fd1d1dd6;
         }
       }
     }
     .wrapper {
       .title {
+        transition: 0.6s;
+        transition-timing-function: ease-in-out;
         background: #242424;
         box-shadow: 8px 8px 16px #1f1f1f, -8px -8px 16px #292929;
         opacity: 0.8;
@@ -273,10 +322,14 @@
   }
   .dark-mode {
     .toggle {
+      transition: 0.6s;
+      transition-timing-function: ease-in-out;
       box-shadow: -8px -4px 8px 0px #171717, 8px 4px 12px 0px #2d2d2d,
         4px 4px 4px 0px #2b2b2b inset, -4px -4px 4px 0px #171717 inset;
     }
     .indicator {
+      transition: 0.6s;
+      transition-timing-function: ease-in-out;
       background: #2d2d2d;
       box-shadow: -8px -4px 8px 0px #000000, 8px 4px 12px 0px #1f1f1f;
     }

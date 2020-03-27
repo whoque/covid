@@ -70,20 +70,12 @@ class Slider extends React.Component {
       <div id="fullpage">
         <div className="section white-mode-background" id="section1">
           <div className="slide active" id="slide1">
-            <div
-              className={`content ${
-                this.props.isPortrait ? `portrait` : `not-portrait`
-              }`}
-            >
+            <div className="content">
               <WorldView stats={this.state} />
             </div>
           </div>
           <div className="slide inactive" id="slide2">
-            <div
-              className={`content ${
-                this.props.isPortrait ? `portrait` : `not-portrait`
-              }`}
-            >
+            <div className="content">
               {this.state.country !== "--" ? (
                 <CountryView stats={this.state} />
               ) : null}
