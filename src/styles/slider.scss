@@ -26,7 +26,7 @@
         /* text-shadow: 2px 2px 1px #3133638a; */
         border-radius: 50px;
         margin-bottom: 5vh;
-        transition: 0.6s;
+        transition: 0.5s;
         transition-timing-function: ease-in-out;
         background: linear-gradient(
           45deg,
@@ -53,7 +53,7 @@
       .stats {
         color: #a0a0a0;
         .block {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           border-radius: 36px;
           margin-bottom: 4vh;
@@ -73,36 +73,36 @@
         }
         .block.block1 {
           .stat-title {
-            transition: 0.6s;
+            transition: 0.5s;
             transition-timing-function: ease-in-out;
             color: #405de67d;
           }
           .stat-value {
-            transition: 0.6s;
+            transition: 0.5s;
             transition-timing-function: ease-in-out;
             color: #5851db8c;
           }
         }
         .block.block2 {
           .stat-title {
-            transition: 0.6s;
+            transition: 0.5s;
             transition-timing-function: ease-in-out;
             color: #833ab485;
           }
           .stat-value {
-            transition: 0.6s;
+            transition: 0.5s;
             transition-timing-function: ease-in-out;
             color: #c135848a;
           }
         }
         .block.block3 {
           .stat-title {
-            transition: 0.6s;
+            transition: 0.5s;
             transition-timing-function: ease-in-out;
             color: #e1306c85;
           }
           .stat-value {
-            transition: 0.6s;
+            transition: 0.5s;
             transition-timing-function: ease-in-out;
             color: #fd1d1d63;
           }
@@ -114,7 +114,7 @@
     .wrapper {
       .title {
         width: 125%;
-        transition: 0.6s;
+        transition: 0.5s;
         transition-timing-function: ease-in-out;
         opacity: 0.3;
       }
@@ -133,7 +133,7 @@
     }
     .stats {
       .block {
-        transition: 0.6s;
+        transition: 0.5s;
         transition-timing-function: ease-in-out;
         .stat-title {
           font-size: 22px;
@@ -162,7 +162,7 @@
         flex-direction: row;
         margin-top: 5vh;
         .block {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           width: 30vw !important;
           margin: 0 1.5vw;
@@ -214,7 +214,7 @@
     width: 200%;
     border-radius: 15px;
     transform: translate3d(-75%, 0, 0);
-    transition: 0.6s;
+    transition: 0.5s;
     transition-timing-function: ease-in-out;
   }
 
@@ -225,12 +225,12 @@
 
 .white-mode-background {
   .slide {
-    transition: 0.6s;
+    transition: 0.5s;
     transition-timing-function: ease-in-out;
     background-color: #eeeeee;
     .stats {
       .block {
-        transition: 0.6s;
+        transition: 0.5s;
         transition-timing-function: ease-in-out;
         background: linear-gradient(145deg, #d6d6d6, #ffffff);
         box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
@@ -238,7 +238,7 @@
     }
     .wrapper {
       .title {
-        transition: 0.6s;
+        transition: 0.5s;
         transition-timing-function: ease-in-out;
         background: #eeeeee;
         box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
@@ -247,13 +247,13 @@
   }
   .dark-mode {
     .toggle {
-      transition: 0.6s;
+      transition: 0.5s;
       transition-timing-function: ease-in-out;
       box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6,
         4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
     }
     .indicator {
-      transition: 0.6s;
+      transition: 0.5s;
       transition-timing-function: ease-in-out;
       background: #ecf0f3;
       box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
@@ -263,48 +263,48 @@
 
 .dark-mode-background {
   .slide {
-    transition: 0.6s;
+    transition: 0.5s;
     transition-timing-function: ease-in-out;
     background-color: #242424;
     .stats {
       .block {
-        transition: 0.6s;
+        transition: 0.5s;
         transition-timing-function: ease-in-out;
         background: linear-gradient(145deg, #212121, #202020);
         box-shadow: 8px 8px 16px #1f1f1f, -8px -8px 16px #0e0e0e;
       }
       .block.block1 {
         .stat-title {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           color: #405de6d6;
         }
         .stat-value {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           color: #5851dbd6;
         }
       }
       .block.block2 {
         .stat-title {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           color: #833ab4d6;
         }
         .stat-value {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           color: #c13584d6;
         }
       }
       .block.block3 {
         .stat-title {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           color: #e1306cd6;
         }
         .stat-value {
-          transition: 0.6s;
+          transition: 0.5s;
           transition-timing-function: ease-in-out;
           color: #fd1d1dd6;
         }
@@ -312,7 +312,7 @@
     }
     .wrapper {
       .title {
-        transition: 0.6s;
+        transition: 0.5s;
         transition-timing-function: ease-in-out;
         background: #242424;
         box-shadow: 8px 8px 16px #1f1f1f, -8px -8px 16px #292929;
@@ -322,13 +322,13 @@
   }
   .dark-mode {
     .toggle {
-      transition: 0.6s;
+      transition: 0.5s;
       transition-timing-function: ease-in-out;
       box-shadow: -8px -4px 8px 0px #171717, 8px 4px 12px 0px #2d2d2d,
         4px 4px 4px 0px #2b2b2b inset, -4px -4px 4px 0px #171717 inset;
     }
     .indicator {
-      transition: 0.6s;
+      transition: 0.5s;
       transition-timing-function: ease-in-out;
       background: #2d2d2d;
       box-shadow: -8px -4px 8px 0px #000000, 8px 4px 12px 0px #1f1f1f;
