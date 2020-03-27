@@ -30,6 +30,8 @@ p {
  * --------------------------------------- */
 #section1 {
   background-color: #eeeeee;
+  display: flex;
+  flex-direction: row;
 }
 #section1 h1 {
   color: #fff;

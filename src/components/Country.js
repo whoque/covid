@@ -377,6 +377,10 @@ class Country extends React.Component {
     });
   };
 
+  handleChangeCountry = e => {
+    this.props.onSelect(e.target.value);
+  };
+
   render() {
     let reducedCountry = [];
     if (this.props.bible) {
@@ -386,7 +390,11 @@ class Country extends React.Component {
     }
     if (this.props.country && reducedCountry.length) {
       return (
-        <select className="drop-down" defaultValue={this.props.country}>
+        <select
+          className="drop-down"
+          defaultValue={this.props.country}
+          onChange={this.handleChangeCountry}
+        >
           {this.renderOptions(reducedCountry)}
         </select>
       );

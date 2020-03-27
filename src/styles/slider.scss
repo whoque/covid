@@ -1,79 +1,100 @@
 #fullpage {
   height: 100vh !important;
+  overflow: hidden;
+  .slide {
+    height: 100vh;
+    padding-top: 3vh;
+    width: 100vw;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #eeeeee;
 
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    .title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #ffffff;
-      letter-spacing: 4px;
-      align-items: center;
+    .wrapper {
       display: flex;
-      height: 45px;
       justify-content: center;
-      width: 65%;
-      /* text-shadow: 2px 2px 1px #3133638a; */
-      border-radius: 50px;
-      background: #eeeeee;
-      box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
-      margin-bottom: 5vh;
-      background: linear-gradient(
-        45deg,
-        #405de67d,
-        #5851db8c,
-        #833ab485,
-        #c135848a,
-        #e1306c85,
-        #fd1d1d63
-      );
-    }
-    .stats {
-      color: #a0a0a0;
-      .block {
-        border-radius: 36px;
-        background: linear-gradient(145deg, #d6d6d6, #ffffff);
-        box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
-        margin-bottom: 4vh;
-        padding: 12px 12px 23px;
+      flex-direction: column;
+      align-items: center;
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+        letter-spacing: 4px;
+        align-items: center;
         display: flex;
-        width: 90vw;
-        flex-direction: column;
-        max-width: 570px;
-        .stat-title {
-          font-size: 22px;
-          height: 65px;
-        }
-        .stat-value {
-          font-size: 17vw;
-          height: 44px;
+        height: 45px;
+        justify-content: center;
+        width: 65%;
+        /* text-shadow: 2px 2px 1px #3133638a; */
+        border-radius: 50px;
+        background: #eeeeee;
+        box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
+        margin-bottom: 5vh;
+        background: linear-gradient(
+          45deg,
+          #405de67d,
+          #5851db8c,
+          #833ab485,
+          #c135848a,
+          #e1306c85,
+          #fd1d1d63
+        );
+        select.drop-down {
+          background: transparent;
+          border: 0 transparent;
+          color: white;
+          option {
+            background: #eeeeee;
+            color: #9a9a9a;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+          }
         }
       }
-      .block.block1 {
-        .stat-title {
-          color: #405de67d;
+      .stats {
+        color: #a0a0a0;
+        .block {
+          border-radius: 36px;
+          background: linear-gradient(145deg, #d6d6d6, #ffffff);
+          box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
+          margin-bottom: 4vh;
+          padding: 12px 12px 23px;
+          display: flex;
+          width: 90vw;
+          flex-direction: column;
+          max-width: 570px;
+          .stat-title {
+            font-size: 22px;
+            height: 65px;
+          }
+          .stat-value {
+            font-size: 17vw;
+            height: 44px;
+          }
         }
-        .stat-value {
-          color: #5851db8c;
+        .block.block1 {
+          .stat-title {
+            color: #405de67d;
+          }
+          .stat-value {
+            color: #5851db8c;
+          }
         }
-      }
-      .block.block2 {
-        .stat-title {
-          color: #833ab485;
+        .block.block2 {
+          .stat-title {
+            color: #833ab485;
+          }
+          .stat-value {
+            color: #c135848a;
+          }
         }
-        .stat-value {
-          color: #c135848a;
-        }
-      }
-      .block.block3 {
-        .stat-title {
-          color: #e1306c85;
-        }
-        .stat-value {
-          color: #fd1d1d63;
+        .block.block3 {
+          .stat-title {
+            color: #e1306c85;
+          }
+          .stat-value {
+            color: #fd1d1d63;
+          }
         }
       }
     }

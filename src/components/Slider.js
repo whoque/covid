@@ -49,33 +49,14 @@ class Slider extends React.Component {
   }
 
   fillStats = (data, bible, { country_name, country_code }, ref) => {
-    this.setState(
-      {
-        country: country_name,
-        cases: data.total_cases,
-        deaths: data.total_deaths,
-        recovered: data.total_recovered,
-        countryData: bible,
-        flag: country_code.toLowerCase()
-      },
-      () => {
-        window.fullpage.initialize("#fullpage", {
-          anchors: ["firstPage", "secondPage"],
-          menu: "#menu",
-          css3: true,
-          afterLoad: function() {
-            const elem = document.querySelector(".drop-down");
-            if (elem) {
-              elem.addEventListener("change", function(e) {
-                ref.forceUpdate();
-                const src = e.srcElement.value.split("_");
-                ref.setState({ country: src[0], flag: src[1] });
-              });
-            }
-          }
-        });
-      }
-    );
+    this.setState({
+      country: country_name,
+      cases: data.total_cases,
+      deaths: data.total_deaths,
+      recovered: data.total_recovered,
+      countryData: bible,
+      flag: country_code.toLowerCase()
+    });
   };
 
   paintScrollers = () => {
